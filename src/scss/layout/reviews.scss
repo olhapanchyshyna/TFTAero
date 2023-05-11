@@ -1,0 +1,118 @@
+.reviews .container{
+    margin-bottom: 170px;
+    max-width: 1440px;
+    width: 100%;
+}
+.offer__slider_counter-reviews{
+    display: flex;
+    margin-top: 40px;
+}
+.reviews .aero-title{
+    margin-bottom: 55px;
+}
+.reviews-slide{
+    max-width: 460px;
+    width: 100%;
+    background-color: #E5E5E5;
+    padding: 25px 31px;
+    border-radius: 30px;
+    min-height: 920px;
+    margin: 10px;
+}
+.reviews-slide-img img{
+    max-width: 403px;
+    width: 100%;
+    margin-bottom: 35px;
+}
+.reviews-slide-text{
+    font-size: 24px;
+    text-align: justify;
+    color: #000;
+    font-weight: 500;
+    line-height: 29px;
+}
+.offer__slider-next_reviews img{
+    width: 30px;
+}
+.offer__slider-prev_reviews img{
+    width: 30px;
+}
+
+@media screen and (max-width: 1440px){
+    .reviews .container{
+        margin-bottom: 170px;
+        max-width: 960px;
+        width: 100%;
+    } 
+}  
+
+ @media screen and (max-width: 1200px){
+    .reviews-slide-text{
+        font-size: 20px;
+    } 
+} 
+@media screen and (max-width: 960px){
+    .reviews-slide{
+        max-width: 360px;
+        width: 100%;
+        padding: 25px 31px;
+        min-height: 770px;
+        margin: 10px;
+    }
+    .reviews .container{
+        margin-bottom: 170px;
+        max-width: 760px;
+        width: 100%;
+    }
+} 
+
+
+ @media screen and (max-width: 803px){
+    .reviews-slide{
+        min-width: 380px;
+        width: 100%;
+    }
+    .container-counter {
+        margin: 0 10px 0 10px;
+    }
+    .reviews-slide-container{
+        max-width: 400px;
+        width: 100%;
+    }
+    .reviews .container{
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 120px;
+    }
+    .reviews .current{
+        padding: 5px;
+    }
+    .offer__slider-next_reviews img{
+        width: 20px;
+    }
+    .offer__slider-prev_reviews img{
+        width: 20px;
+    }
+    .offer__slider_counter-reviews{
+        margin-left: 30px;
+    }
+} 
+
+@media screen and (max-width: 400px){
+    .reviews-slide{
+        min-width: 360px;
+        width: 100%;
+    }
+    .container-counter {
+        margin: 0 10px 0 10px;
+    }
+    .reviews-slide-container{
+        max-width: 380px;
+        width: 100%;
+    }
+
+} 
+
+
+
+

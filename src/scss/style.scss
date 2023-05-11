@@ -1,0 +1,150 @@
+@use 'sass:math';
+
+// Подключение шрифтов локально из папки "./src/fonts" =======================================================================================================================
+@import 'config/fonts';
+
+// Подключение sass функций и миксинов и рассширений стилей =======================================================================================================================
+@import 'config/mixins';
+
+// Подключение переменных =======================================================================================================================
+@import 'config/vars';
+
+// Обнуление =======================================================================================================================
+@import 'config/reset';
+
+/* =======================================================================================================================
+* Библиотеки
+* раскомментировать для использования 
+*/
+@import 'libs/animate';
+
+// Подлючение кастомного скрола для всего сайта =======================================================================================================================
+@import 'config/scrollbar';
+
+// Общие параметры, шаблоны(заготовки) и вспомагательные классы =======================================================================================================================
+@import 'config/base';
+
+// БЕМ блоки используемые во всё проекте =======================================================================================================================
+
+// Подключение стилей отдельных блоков и секций =======================================================================================================================
+@import 'layout/navbar';
+@import 'layout/first-screen';
+@import 'layout/aviation-simulators';
+@import 'layout/circle-word';
+@import 'layout/where-fly';
+@import 'layout/diference-boeing-airbus';
+@import 'layout/reviews';
+@import 'layout/instructors';
+@import 'layout/contacts';
+
+
+body{
+    max-width: 1920px !important;
+    margin: 0 auto;
+    position: relative;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0;
+}
+.aero-title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+    text-transform: uppercase;
+    color: #03008D;
+}
+
+.background-img-1{
+    position: absolute;
+    top: -197px;
+    right: 0;
+    z-index: 0;
+}
+.background-img-2{
+    position: absolute;
+    top: 900px;
+    left: 0;
+    z-index: 0;
+}
+.background-img-3{
+    position: absolute;
+    top: 1333px;
+    right: 0;
+    z-index: 0;
+}
+
+
+// gift-certificates
+
+.gift-certificates{ 
+    max-width: 710px;
+    width: 100%;
+    margin-right: -100px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+.gift-certificates-title{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 47px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #6777FF;
+    border-radius: 30px 30px 0px 0px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.prise{
+    padding: 20px;
+    background: #E5E5E5;
+    border-radius: 0px 0px 30px 30px;
+}
+.prise-item{
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 20px;
+    justify-content: space-between;
+}
+.prise-item:last-child{
+    border-bottom: none;
+}
+.prise-item-list-time{
+    font-weight: 800;
+    font-size: 47px;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #000000; 
+}
+.prise-item-list-cost{
+    font-weight: 800;
+    font-size: 47px;
+    line-height: 56px;
+    text-transform: uppercase; 
+    color: #03008D;
+}
+
+@media screen and (max-width: 1435px){
+    .aero-title{
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 58px;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1064px){
+    .aero-title{
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 43px;
+    }
+}
+@media screen and (max-width: 560px){
+     .aero-title{
+        font-size: 36px;  
+        max-width: 500px;
+        line-height: 110%;
+    }
+}

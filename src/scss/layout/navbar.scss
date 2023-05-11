@@ -1,0 +1,145 @@
+
+.active:hover{
+    color: red;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color:  rgba(255, 255, 255, 0.674);
+}
+.navbar{
+    background-color: #6777FF;
+    padding: 50px 100px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    .container-fluid{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-collapse{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-address{
+        font-size: 16px;
+        line-height: 125.04%;
+        text-align: right;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        min-width: 286px;
+        margin-bottom: 12px; 
+    }
+    &__wrapper{
+        &_icon{
+            display: none;
+        }
+            
+    }
+    &-brand{
+        max-width: 150px;
+        width: 100%;
+    }
+}
+.navbar-light .navbar-nav .nav-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 146%;
+    color: #FFFFFF; 
+    text-align: center;
+    padding: 15px;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 146%;
+  
+}
+.navbar-nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.navbar-contact{
+    max-width: 300px;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.navbar-phone {
+    display: flex;
+    div{
+        font-size: 24px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    img{
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1236px){
+    .navbar{
+        padding: 50px 20px;
+    }
+}
+@media screen and (max-width: 1060px){
+    .navbar-light .navbar-nav .nav-link{
+        font-size: 20px;
+        line-height: 220%;
+    }
+    .navbar{
+        padding: 20px 20px 100px;
+        &-nav{
+            flex-direction: column;
+            position: relative;
+        }
+        &__wrapper{
+            &_icon{
+                top: 20px;
+                right: 10px;
+                position: absolute;
+                display: flex;
+                width: 47px;
+                height: 47px;
+                background-color: #0000009c;
+                border-radius: 5px;
+                padding: 10px; 
+            }  
+        }
+        &__open, &__close{
+            color: #FFFFFF;
+            width: 25px;
+            height: 25px;
+            display: flex;
+        }
+        &__close{
+            display: none;
+        }
+        &-collapse, &-contact{
+            display: none;
+            flex-direction: column;
+        }
+        &-contact{
+           margin: 40px auto;
+           text-align: center;
+           align-items: center;
+        }
+        &-address{
+            text-align: center;
+        }
+        .container-fluid{
+            flex-direction: column;
+        }
+            
+    }
+}
+
+
+

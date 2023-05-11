@@ -1,0 +1,140 @@
+.instructors{
+    margin-bottom: 140px;
+}
+.instructors .aero-title{
+    margin-bottom: 68px;
+}
+.instructors-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 90px;
+}
+.instructors-list-item{
+    margin: 0 10px;
+    background-color: #6777FF;
+    border-radius: 20px
+    
+}
+.instructors-list-item:first-child{
+    margin-left: 0px;
+}
+.instructors-list-item-text{
+    padding: 30px;
+    text-align: center;
+}
+.instructors-list-item-name{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 100%;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.instructors-list-item-rank{
+    font-size: 24px;
+    line-height: 100%;
+    color: #fff;
+}
+.instructors-button{
+    display: flex;
+    justify-content: center;
+}
+.instructors-button .button{
+    background-color: #6777FF;
+    color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    font-size: 36px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+}
+.instructors-button .button:hover{
+    background-color: #5364f8;
+}
+.instructors-list-item-img img{
+    max-width: 345px;
+    width: 100%;
+}
+.offer__slider_counter-instructors{
+    display: none;
+}
+
+.offer__slider-inner-instructors{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 1450px){
+    .offer__slider_counter-instructors{
+        display: flex;
+        margin-top: 30px;
+        flex-direction: row;
+    }
+    .instructors-list-item-img img{
+        max-width: 380px;
+        width: 100%;
+    }
+    .offer__slider-prev_instructors img{
+        width: 30px;
+    }
+    .offer__slider-next_instructors img{
+        width: 30px;
+    }
+    .instructors-container{
+        max-width: 795px;
+        width: 100%;
+    }
+    .instructors-list-item{
+        max-width: 360px;
+        width: 100%;
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .instructors-list-item-name,
+    .instructors-list-item-rank{
+        font-size: 20px;
+    }
+    .instructors-list-item-text{
+        padding: 10px;
+        text-align: center;
+    }
+    .instructors-button .button{
+        background-color: #6777FF;
+        color: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        font-size: 25px;
+        text-align: center;
+        border: none;
+        text-transform: uppercase;
+    }
+
+}
+@media screen and (max-width: 815px){
+    .instructors-list-item-img img{
+        max-width: 360px;
+        width: 100%;
+    }
+    .instructors-container{
+        max-width: 360px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .instructors-list-item{
+        min-width: 360px;
+        width: 100%;
+        margin: 0;
+    }
+    .offer__slider_counter-instructors{
+        margin: auto;
+        margin-top: 30px;
+    }
+    .instructors .aero-title{
+        margin-bottom: 45px;
+    }
+}
+

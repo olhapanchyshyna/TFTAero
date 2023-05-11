@@ -1,0 +1,315 @@
+.first-screen{
+    .container-fluid{
+        margin-right: 0 ;
+        padding: 0;
+        margin-bottom: 197px;                                           
+    }
+    .container{
+        max-width: 1920px;
+        width: 100%;
+        display: flex;
+        padding-left: 249px;
+        padding-right: 0;
+    } 
+    &-content-text-1{   
+        font-size: 140px;
+        line-height: 120px;
+    }
+    &-content-text-2{
+        color: #000000;
+        font-size: 30px;
+        line-height: 43px;
+    }
+    &-content-text-3{
+        font-size: 60px;
+        color: #000000;
+        line-height: 63px;
+    }
+    &-content-text-4{
+        font-size: 65px;
+        line-height: 63px;
+    }
+    &-container-content{
+        margin-top: 66px;
+        text-transform: uppercase;
+    }
+    
+    /* gift-certificates */
+    
+    &-gift-certificates{
+        z-index: 5; 
+        max-width: 600px;
+    }
+    
+    .gift-certificates{ 
+        min-width: 700px;
+        width: 100%;
+    }
+}
+
+/* дядка в самолете, ох и намучались с ним от недостатка знаний  */
+
+.container-img{
+    position: relative;
+    max-width: 1376px;
+    width: 100%;
+    margin-top: -235px;
+    margin-left: 45px;
+    overflow: hidden;
+}
+.img-1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    z-index: 1;
+    
+}
+.img-2 {
+    width: 101%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 168px;
+    left: -4px;
+    z-index: 3;
+
+}
+.navbar{
+    position: relative;
+    z-index: 2;
+}
+
+.container-img:before{
+    content: "";
+    width: 900px;
+    height: 980px;
+    left: -270px;
+    top: 235px;
+    background: linear-gradient(90deg, #FFFFFF 28.11%, rgba(255, 255, 255, 0) 69.4%);
+    position: absolute;
+    z-index: 4;
+}
+
+/* end */
+
+
+@media screen and (max-width: 1800px){
+    .container-img:before{
+        content: "";
+        width: 800px;
+        left: -212px;
+    }
+    .container-img {
+        margin-left: 0px;
+        height: 1024px;
+        margin-top: -235px;
+    }
+    .first-screen .container{
+        padding-left: 150px;
+    } 
+    .img-2 {
+        width: 101%;
+        height: 105%;
+        top: 165px;
+    }
+    .img-1 {
+        top: 38px;
+    }
+}
+
+@media screen and (max-width: 1650px){
+    .container-img:before{
+        content: "";
+        width: 700px;
+        left: -186px;
+    }
+}
+@media screen and (max-width: 1585px){
+    .container-img:before{
+        content: "";
+        width: 600px;
+        left: -176px;
+    }
+    .first-screen-gift-certificates{
+        margin-right: -40px;
+    }
+} 
+@media screen and (max-width: 1440px){
+    .first-screen{
+        .gift-certificates-title{
+            max-width: 600px;
+            width: 100%;
+        }
+        .prise{
+            max-width: 600px;
+            width: 100%;
+        }
+        .prise-item-list-time{
+            font-size: 30px;
+        }
+        .prise-item-list-cost{
+            font-size: 30px;
+        }
+        .prise-item {
+            padding: 10px 20px;
+        }
+    }
+    
+}
+
+ @media screen and (max-width: 1366px){
+    .first-screen {
+        .gift-certificates{ 
+            min-width: 580px;
+            width: 100%;
+        }
+        .container{
+            padding-left: 120px;
+        } 
+        .container-img{
+            margin-left: 0px;
+            height: 962px;
+            margin-top: -235px;
+        }
+    }
+    
+} 
+@media screen and (max-width: 1310px){
+    .container-img:before{
+        content: "";
+        left: -176px;
+    }
+    .first-screen .container{
+        padding-left: 20px;
+    } 
+    .first-screen-gift-certificates{
+        margin-right: -115px;
+    }
+} 
+@media screen and (max-width: 1060px){
+    .first-screen .container{
+        flex-direction: column;
+        padding-left: 0; 
+    }
+    .first-screen.container-fluid {
+        margin-bottom: 81px;
+    }
+    .container-img{
+        order: 1;
+        margin-top: -209px;
+        height: 1015px;
+    }
+    .first-screen-gift-certificates{
+        order: 2;
+        margin: -233px auto auto;
+       
+    }
+    .container-img:before {
+       transform: rotate(270deg);
+       left: 226px;
+       height: 1075px;
+    }
+    .first-screen-container-content{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .croup-header-text-1{
+        margin-right: 13px;
+    }
+    .first-screen-content-text-3,
+    .first-screen-content-text-4{
+        font-size: 72px;
+        line-height: 85px;
+    }
+    .container{
+        margin: auto;
+    }
+
+}
+@media screen and (max-width: 700px){
+    .first-screen .prise{
+        max-width: 480px;
+        width: 100%;
+    }
+    .first-screen .gift-certificates-title{
+        max-width: 480px;
+        width: 100%;
+       
+    }
+    .first-screen .gift-certificates{
+        min-width: 482px;
+        width: 100%;
+    }
+    .first-screen-content-text-1{   
+       font-size: 100px;
+       
+    }
+    .first-screen-content-text-2{
+        font-size: 25px;
+        line-height: 10px;
+        
+     }
+    .first-screen-content-text-3{
+        font-size: 50px;
+        line-height: 90px;
+    }
+    .first-screen-content-text-4{
+        line-height: 50px;
+        font-size: 50px;
+        
+    }
+     .container-img:before {
+        transform: rotate(270deg);
+        left: -16px;
+        height: 963px;
+     }
+}
+@media screen and (max-width: 500px){
+    .first-screen .prise{
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .first-screen .gift-certificates-title{
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .first-screen-content-text-1{   
+        font-size: 70px;
+        line-height: 80px;
+       
+    }
+    .first-screen-content-text-2{
+        font-size: 15px;
+        line-height: 0px;
+        
+    }
+    .first-screen-content-text-3{
+        line-height: 50px;
+        font-size: 35px;
+    }
+    .first-screen-content-text-4{
+        line-height: 45px;
+         font-size: 35px;
+        
+    }
+    .first-screen-container-content{
+        max-width: 350px;
+        width: 100%;
+        margin: 41px auto;
+    }
+    .first-screen-gift-certificates {
+        margin: -210px 10px auto;
+    }
+    .first-screen .gift-certificates{
+        min-width: 320px;
+        width: 100%
+    }
+    
+    
+}
