@@ -1,4 +1,3 @@
-// import cards from './modules/cards';
 import sliders from './modules/slides';
 import hamburger from './modules/hamburger';
 import scrolling from './modules/scrolling';

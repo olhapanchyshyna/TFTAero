@@ -5,7 +5,7 @@
 }
 .offer__slider_counter-reviews{
     display: flex;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .reviews .aero-title{
     margin-bottom: 55px;
@@ -16,13 +16,12 @@
     background-color: #E5E5E5;
     padding: 25px 31px;
     border-radius: 30px;
-    min-height: 920px;
     margin: 10px;
 }
 .reviews-slide-img img{
     max-width: 403px;
     width: 100%;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 .reviews-slide-text{
     font-size: 24px;
@@ -56,7 +55,6 @@
         max-width: 360px;
         width: 100%;
         padding: 25px 31px;
-        min-height: 770px;
         margin: 10px;
     }
     .reviews .container{
@@ -66,8 +64,7 @@
     }
 } 
 
-
- @media screen and (max-width: 803px){
+@media screen and (max-width: 803px){
     .reviews-slide{
         min-width: 380px;
         width: 100%;

@@ -3,12 +3,12 @@
 }
 .offer__slider_counter{
     display: flex ;
-    margin-bottom: 68px;
+    margin-bottom: 30px;
     margin-left: 20px;
     max-width: 1440px;
 }
 .circle-word .aero-title{
-    margin-bottom: 177px;
+    margin-bottom: 150px;
 }
 .circle-word-slide{
     max-width: 675px;
@@ -94,6 +94,9 @@
         max-width: 810px;
         margin: 0 auto;
     } 
+    .circle-word .aero-title{
+        margin-bottom: 100px;
+    }
 }
 
 @media screen and (max-width: 815px){
