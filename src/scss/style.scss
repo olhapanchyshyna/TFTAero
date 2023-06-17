@@ -42,6 +42,7 @@ body{
     max-width: 1920px !important;
     margin: 0 auto;
     position: relative;
+    font-family: 'Roboto', sans-serif;
 }
 .container{
     margin: 0 auto;
@@ -112,14 +113,14 @@ body{
     border-bottom: none;
 }
 .prise-item-list-time{
-    font-weight: 800;
+    font-weight: 700;
     font-size: 47px;
     line-height: 56px;
     text-transform: uppercase;
     color: #000000; 
 }
 .prise-item-list-cost{
-    font-weight: 800;
+    font-weight: 700;
     font-size: 47px;
     line-height: 56px;
     text-transform: uppercase; 

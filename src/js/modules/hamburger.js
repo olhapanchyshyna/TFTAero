@@ -1,5 +1,8 @@
 function hamburger(openSelector,closeSelector,menuSelector,menuInformatiomSelector){
 
+    const nav = document.querySelector('.navbar');
+    
+
     window.addEventListener('resize', () => {
         showMenu();
     });
@@ -19,17 +22,16 @@ function hamburger(openSelector,closeSelector,menuSelector,menuInformatiomSelect
                 menu.style.display = 'flex';
                 menu.style.flexDirection = 'column';
                 menuInformatiom.style.display = 'flex';
+                menu.style.marginTop = '40px';
                 openBtn.style.display = 'none';
                 closeBtn.style.display = 'flex';
-                
 
             }
             function close(){
-                menu.style.display = 'none'
+                menu.style.display = 'none';
                 menuInformatiom.style.display = 'none';
                 closeBtn.style.display = 'none';
-                openBtn.style.display = 'flex';
-                
+                openBtn.style.display = 'flex'; 
             }
         
             openBtn.addEventListener('click', () =>{

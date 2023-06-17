@@ -1,122 +1,78 @@
 // --------------Слайд Circle world--------------
 function sliders(){
-    function sliderCircle(){
-        const   slidesCircle = document.querySelectorAll('.circle-word-slide'),
-        nextCircle = document.querySelector('.offer__slider-next'),
-        prevCircle = document.querySelector('.offer__slider-prev'),
-        currentCircle = document.querySelectorAll('.current'),
-        sliderWrapperCircle = document.querySelector('.circle-word-slide-container'),
-        widthCircle = window.getComputedStyle(sliderWrapperCircle).width,
-        slidesFiledCircle = document.querySelector('.offer__slider-inner');
         
-        
-        let     slideIndexCircle = 1,
-                offsetCircle = 0;    
-        
-        
-        slidesFiledCircle.style.width = 100 * slidesCircle.length + '%';
-        slidesFiledCircle.style.display = 'flex';
-        slidesFiledCircle.style.transition = '0.5s all';
-        sliderWrapperCircle.style.overflow = 'hidden';
-        
-        
-        currentCircle.forEach(item => {
-            item.classList.remove('active-current');
-        });
-        
-        
-        function showCurrentCircle(i = 0){
-            currentCircle[i].classList.add('active-current');
-        }
-        showCurrentCircle();
-        
-        function changeCurrent(){
-            currentCircle.forEach((num, a) => {
-                num.classList.remove('active-current');
-                if(slideIndexCircle - 1 === a){
-                    showCurrentCircle(a);
-                }
-            });
-        }
-        
-        function addSlideCircle(){
-            const parentCircle = document.querySelector('.offer__slider-inner');
-            const cloneFirstSlideCircle = document.createElement('div');
-            
-            cloneFirstSlideCircle.classList.add('circle-word-slide');
-            cloneFirstSlideCircle.innerHTML = `
-                <div class="circle-word-slide-title">
-                    Круг в Киеве
-                </div>
-                <div class="circle-word-slide-img">
-                    <img src="./img/slides/circle-word-slide-domodedovo.png" alt="">
-                </div>
-                <div class="circle-word-slide-text">Несколько кругов вокруг одного из крупнейших аэропортов региона — Дубаи, во время полета вы сможете увидеть с высоты птичьего полета легендарный высочайший в мире небоскреб...</div>
-                <div class="circle-word-slide-button">
-                    <button>Читать далее</button>
-                </div>
-            `;
-            parentCircle.append(cloneFirstSlideCircle);
-        }
-        addSlideCircle();
-        
-        
-        function listenerNextCircle(){
-            if (offsetCircle == (+widthCircle.slice(0, widthCircle.length - 2)/2  * (slidesCircle.length - 1))) { //650    px
-                offsetCircle = 0;
-            } else {
-                offsetCircle += (+widthCircle.slice(0, widthCircle.length - 2)/2); 
-            }
-            
-            slidesFiledCircle.style.transform = `translateX(-${offsetCircle}px)`;
-            
-            if (slideIndexCircle == slidesCircle.length) {
-                slideIndexCircle = 1;
-            } else {
-                slideIndexCircle++;
-            }
-            
-            changeCurrent();
-        }
-        
-        nextCircle.addEventListener('click', listenerNextCircle);
-        
-        
-        
-        function listenerPrevCircle(){
-            if (offsetCircle == 0) {
-                offsetCircle = (+widthCircle.slice(0, widthCircle.length - 2)/2  * (slidesCircle.length - 1));
-            } else {
-                offsetCircle -= (+widthCircle.slice(0, widthCircle.length - 2)/2);
-            }
-            slidesFiledCircle.style.transform = `translateX(-${offsetCircle}px)`;
-        
-            if (slideIndexCircle == 1) {
 
-                slideIndexCircle = slidesCircle.length;
-            } else {
-                slideIndexCircle--;
+        function sliderCircle(){
+            const   slidesCircle = document.querySelectorAll('.circle-word-slide'),
+            nextCircle = document.querySelector('.offer__slider-next'),
+            prevCircle = document.querySelector('.offer__slider-prev'),
+            currentCircle = document.querySelectorAll('.current'),
+            sliderWrapperCircle = document.querySelector('.circle-word-slide-container'),
+            widthCircle = window.getComputedStyle(sliderWrapperCircle).width,
+            slidesFiledCircle = document.querySelector('.offer__slider-inner');
+            let     slideIndexCircle = 1,
+                    offsetCircle = 0;    
+            
+
+            slidesFiledCircle.style.width = 100 * slidesCircle.length + '%';
+            slidesFiledCircle.style.display = 'flex';
+            slidesFiledCircle.style.transition = '0.5s all';
+            sliderWrapperCircle.style.overflow = 'hidden';
+            
+            
+            currentCircle.forEach(item => {
+                item.classList.remove('active-current');
+            });
+            
+            function showCurrentCircle(i = 0){
+                currentCircle[i].classList.add('active-current');
+            }
+            showCurrentCircle();
+            
+
+            function changeCurrent(){
+                currentCircle.forEach((num, a) => {
+                    num.classList.remove('active-current');
+                    if(slideIndexCircle - 1 === a){
+                        showCurrentCircle(a);
+                    }
+                });
             }
             
-            changeCurrent();
-        }
-        
-        prevCircle.addEventListener('click', listenerPrevCircle);
-        
-        
-        if(document.documentElement.clientWidth <= 815){
-        
-            nextCircle.removeEventListener('click', listenerNextCircle);
-            prevCircle.removeEventListener('click', listenerPrevCircle);
+            function shiftSlideCircle(){
+                slidesFiledCircle.style.transform = `translateX(-${offsetCircle}px)`;
+            }
+
+            function addSlideCircle(){
+                const parentCircle = document.querySelector('.offer__slider-inner');
+                const cloneFirstSlideCircle = document.createElement('div');
+                
+                cloneFirstSlideCircle.classList.add('circle-word-slide');
+                cloneFirstSlideCircle.innerHTML = `
+                    <div class="circle-word-slide-title">
+                        Круг в Киеве
+                    </div>
+                    <div class="circle-word-slide-img">
+                        <img src="./img/slides/circle-word-slide-domodedovo.png" alt="">
+                    </div>
+                    <div class="circle-word-slide-text">Несколько кругов вокруг одного из крупнейших аэропортов региона — Дубаи, во время полета вы сможете увидеть с высоты птичьего полета легендарный высочайший в мире небоскреб...</div>
+                    <div class="circle-word-slide-button">
+                        <button>Читать далее</button>
+                    </div>
+                `;
+                parentCircle.append(cloneFirstSlideCircle);
+            }
+            addSlideCircle();
             
-            nextCircle.addEventListener('click', () => { 
-                if (offsetCircle == (+widthCircle.slice(0, widthCircle.length - 2) * (slidesCircle.length - 1))) { //650    px
+            
+            function listenerNextCircle(){
+                if (offsetCircle == (+widthCircle.slice(0, widthCircle.length - 2)/2  * (slidesCircle.length - 1))) { //650    px
                     offsetCircle = 0;
                 } else {
-                    offsetCircle += +widthCircle.slice(0, widthCircle.length - 2); 
+                    offsetCircle += (+widthCircle.slice(0, widthCircle.length - 2)/2); 
                 }
                 
-                slidesFiledCircle.style.transform = `translateX(-${offsetCircle}px)`;
+                shiftSlideCircle();
                 
                 if (slideIndexCircle == slidesCircle.length) {
                     slideIndexCircle = 1;
@@ -125,228 +81,283 @@ function sliders(){
                 }
                 
                 changeCurrent();
-            });
-        
-            prevCircle.addEventListener('click', () => {
+            }
+            
+            nextCircle.addEventListener('click', listenerNextCircle);
+            
+            
+            
+            function listenerPrevCircle(){
                 if (offsetCircle == 0) {
-                    offsetCircle = +widthCircle.slice(0, widthCircle.length - 2) * (slidesCircle.length - 1);
+                    offsetCircle = (+widthCircle.slice(0, widthCircle.length - 2)/2  * (slidesCircle.length - 1));
                 } else {
-                    offsetCircle -= +widthCircle.slice(0, widthCircle.length - 2);
+                    offsetCircle -= (+widthCircle.slice(0, widthCircle.length - 2)/2);
                 }
-                
-                slidesFiledCircle.style.transform = `translateX(-${offsetCircle}px)`;
-                
+                shiftSlideCircle();
+            
                 if (slideIndexCircle == 1) {
+
                     slideIndexCircle = slidesCircle.length;
                 } else {
                     slideIndexCircle--;
                 }
                 
                 changeCurrent();
-            });
-        }
-        
-    }
-    
-    
-    // --------------Слайд reviews--------------
-
-    function sliderReviews(){
-    
-        const   slidesReviews = document.querySelectorAll('.reviews-slide'),
-        nextReviews = document.querySelector('.offer__slider-next_reviews'),
-        prevReviews = document.querySelector('.offer__slider-prev_reviews'),
-        currentReviews = document.querySelectorAll('.reviews .current'),
-        sliderWrapperReviews = document.querySelector('.reviews-slide-container'),
-        widthReviews = window.getComputedStyle(sliderWrapperReviews).width,
-        slidesFiledReviews = document.querySelector('.offer__slider-inner-reviews');
-        
-        let slideIndexReviews = 1,
-        offsetReviews = 0;    
-        
-        slidesFiledReviews.style.width = 100 * slidesReviews.length + '%';
-        slidesFiledReviews.style.display = 'flex';
-        slidesFiledReviews.style.transition = '0.5s all';
-        sliderWrapperReviews.style.overflow = 'hidden';
-        
-        
-        slidesReviews.forEach(item => {
-            item.style.width = widthReviews;    
-        });
-        
-        currentReviews.forEach(item => {
-            item.classList.remove('active-current');
-        });
-        
-        function changeCurrent(){
-            currentReviews.forEach((num, a) => {
-                num.classList.remove('active-current');
-                    if(slideIndexReviews - 1 === a){
-                        showCurrentReviews(a);
+            }
+            
+            prevCircle.addEventListener('click', listenerPrevCircle);
+            
+            
+            if(document.documentElement.clientWidth <= 815){
+            
+                nextCircle.removeEventListener('click', listenerNextCircle);
+                prevCircle.removeEventListener('click', listenerPrevCircle);
+                
+                nextCircle.addEventListener('click', () => { 
+                    if (offsetCircle == (+widthCircle.slice(0, widthCircle.length - 2) * (slidesCircle.length - 1))) { //650    px
+                        offsetCircle = 0;
+                    } else {
+                        offsetCircle += +widthCircle.slice(0, widthCircle.length - 2); 
                     }
+                    
+                    shiftSlideCircle();
+                    
+                    if (slideIndexCircle == slidesCircle.length) {
+                        slideIndexCircle = 1;
+                    } else {
+                        slideIndexCircle++;
+                    }
+                    
+                    changeCurrent();
+                });
+            
+                prevCircle.addEventListener('click', () => {
+                    if (offsetCircle == 0) {
+                        offsetCircle = +widthCircle.slice(0, widthCircle.length - 2) * (slidesCircle.length - 1);
+                    } else {
+                        offsetCircle -= +widthCircle.slice(0, widthCircle.length - 2);
+                    }
+                    
+                    shiftSlideCircle();
+                    
+                    if (slideIndexCircle == 1) {
+                        slideIndexCircle = slidesCircle.length;
+                    } else {
+                        slideIndexCircle--;
+                    }
+                    
+                    changeCurrent();
+                });
+            }
+            
+        }
+      
+          
+        
+        // --------------Слайд reviews--------------
+
+        function sliderReviews(){
+        
+            const   slidesReviews = document.querySelectorAll('.reviews-slide'),
+            nextReviews = document.querySelector('.offer__slider-next_reviews'),
+            prevReviews = document.querySelector('.offer__slider-prev_reviews'),
+            currentReviews = document.querySelectorAll('.reviews .current'),
+            sliderWrapperReviews = document.querySelector('.reviews-slide-container'),
+            widthReviews = window.getComputedStyle(sliderWrapperReviews).width,
+            slidesFiledReviews = document.querySelector('.offer__slider-inner-reviews');
+            
+            let slideIndexReviews = 1,
+            offsetReviews = 0;    
+            
+            slidesFiledReviews.style.width = 100 * slidesReviews.length + '%';
+            slidesFiledReviews.style.display = 'flex';
+            slidesFiledReviews.style.transition = '0.5s all';
+            sliderWrapperReviews.style.overflow = 'hidden';
+            
+            window.addEventListener('resize', () => {
+                widthReviews = window.getComputedStyle(sliderWrapperReviews).width
+            })
+            
+            slidesReviews.forEach(item => {
+                item.style.width = widthReviews;    
             });
-        }
-        
-        function showCurrentReviews(i = 0){
-            currentReviews[i].classList.add('active-current');
-        }
-        showCurrentReviews();
-        
-        
-        function addSlideReviews(src,text){
-            const parentReviews = document.querySelector('.offer__slider-inner-reviews');
-            const cloneFirstSlideReviews = document.createElement('div');
             
-            cloneFirstSlideReviews.classList.add('reviews-slide');
-            cloneFirstSlideReviews.innerHTML = `
-                <div class="reviews-slide-img">
-                    <img src= ${src} alt="reviews">
-                </div>
-                <div class="reviews-slide-text">
-                    ${text}
-                </div>
-            `;
-            parentReviews.append(cloneFirstSlideReviews);
+            currentReviews.forEach(item => {
+                item.classList.remove('active-current');
+            });
             
-        }
-        addSlideReviews("./img/slides/reviews-slide-img-1.png",'Огромное спасибо компании ТФТаеро организаторам за предоставленную возможность воспользоваться сертификатом. Получили огромное удовольствие от полёта, сын в восторге! Спасибо пилоту Алексею за инструктаж. Рекомендую друзьям и вам! И да, берите сразу сеанс от 1 часа.');
-        addSlideReviews("./img/slides/reviews-slide-img-2.png",'Большое спасибо инструктору Сергею. Подарила сыновьям 1час полета и не пожалела. Позитивные эмоции, яркие впечатления , доброжелательность и коммуникабельность персонала. Вообщем, сюрприз удался. Спасибо. Рекомендую родителям взрослых детей.');
-        
-        
-        
-        
-        function listenerNextReviews(){
-            if (offsetReviews == (+widthReviews.slice(0, widthReviews.length - 2)/3  * (slidesReviews.length - 1))) { //650    px
-                offsetReviews = 0;
-            } else {
-                offsetReviews += (+widthReviews.slice(0, widthReviews.length - 2)/3); 
-            }
-        
-            slidesFiledReviews.style.transform = `translateX(-${offsetReviews}px)`;
-        
-            if (slideIndexReviews == slidesReviews.length) {
-                slideIndexReviews = 1;
-            } else {
-                slideIndexReviews++;
-            }
-            changeCurrent();
-            
-        }
-        
-        nextReviews.addEventListener('click', listenerNextReviews);
-        
-        function listenerPrevReviews(){
-            if (offsetReviews == 0) {
-                offsetReviews = +widthReviews.slice(0, widthReviews.length - 2)/3 * (slidesReviews.length - 1);
-            } else {
-                offsetReviews -= (+widthReviews.slice(0, widthReviews.length - 2)/3);
-            }
-        
-            slidesFiledReviews.style.transform = `translateX(-${offsetReviews}px)`;
-        
-            if (slideIndexReviews == 1) {
-                slideIndexReviews = slidesReviews.length;
-            } else {
-                slideIndexReviews--;
-            }
-
-            changeCurrent();
-        }
-            
-        prevReviews.addEventListener('click', listenerPrevReviews);
-        
-        function nextReviews2(){
-            if(offsetReviews == (+widthReviews.slice(0, widthReviews.length - 2)/2 * (slidesReviews.length - 1))) { //650    px
-                offsetReviews = 0;
-            }else {
-                offsetReviews += (+widthReviews.slice(0, widthReviews.length - 2)/2); 
-            }
-        
-            slidesFiledReviews.style.transform = `translateX(-${offsetReviews}px)`;
-        
-            if (slideIndexReviews == slidesReviews.length) {
-                slideIndexReviews = 1;
-            } else {
-                slideIndexReviews++;
-            }
-
-            changeCurrent();
-            
-        }
-
-        function prevReviews2(){
-            if (offsetReviews == 0) {
-                offsetReviews = +widthReviews.slice(0, widthReviews.length - 2)/2 * (slidesReviews.length - 1);
-            } else {
-                offsetReviews -= (+widthReviews.slice(0, widthReviews.length - 2)/2);
+            function changeCurrent(){
+                currentReviews.forEach((num, a) => {
+                    num.classList.remove('active-current');
+                        if(slideIndexReviews - 1 === a){
+                            showCurrentReviews(a);
+                        }
+                });
             }
             
-            slidesFiledReviews.style.transform = `translateX(-${offsetReviews}px)`;
-            
-            if (slideIndexReviews == 1) {
-                slideIndexReviews = slidesReviews.length;
-            } else {
-                slideIndexReviews--;
+            function showCurrentReviews(i = 0){
+                currentReviews[i].classList.add('active-current');
             }
+            showCurrentReviews();
             
-            changeCurrent();
-        }
-            
-        if(document.documentElement.clientWidth <= 1440){
-            
-            nextReviews.removeEventListener('click', listenerNextReviews);
-            prevReviews.removeEventListener('click', listenerPrevReviews);
-            
-            nextReviews.addEventListener('click', nextReviews2);
-            prevReviews.addEventListener('click', prevReviews2);
-            
-        }
-        if(document.documentElement.clientWidth <= 815){
-        
-            nextReviews.removeEventListener('click', nextReviews2);
-            prevReviews.removeEventListener('click', prevReviews2);
-        
-            nextReviews.addEventListener('click', () => { 
-                if(offsetReviews == (+widthReviews.slice(0, widthReviews.length - 2) * (slidesReviews.length - 1))) { //650    px
-                    offsetReviews = 0;
-                }else {
-                    console.log(widthReviews);
-                    offsetReviews += +widthReviews.slice(0, widthReviews.length - 2) ; 
-                }
-                
+            function shiftSlideReviews(){
                 slidesFiledReviews.style.transform = `translateX(-${offsetReviews}px)`;
+            }
+            
+            function addSlideReviews(src,text){
+                const parentReviews = document.querySelector('.offer__slider-inner-reviews');
+                const cloneFirstSlideReviews = document.createElement('div');
                 
+                cloneFirstSlideReviews.classList.add('reviews-slide');
+                cloneFirstSlideReviews.innerHTML = `
+                    <div class="reviews-slide-img">
+                        <img src= ${src} alt="reviews">
+                    </div>
+                    <div class="reviews-slide-text">
+                        ${text}
+                    </div>
+                `;
+                parentReviews.append(cloneFirstSlideReviews);
+                
+            }
+            addSlideReviews("./img/slides/reviews-slide-img-1.png",'Огромное спасибо компании ТФТаеро организаторам за предоставленную возможность воспользоваться сертификатом. Получили огромное удовольствие от полёта, сын в восторге! Спасибо пилоту Алексею за инструктаж. Рекомендую друзьям и вам! И да, берите сразу сеанс от 1 часа.');
+            addSlideReviews("./img/slides/reviews-slide-img-2.png",'Большое спасибо инструктору Сергею. Подарила сыновьям 1час полета и не пожалела. Позитивные эмоции, яркие впечатления , доброжелательность и коммуникабельность персонала. Вообщем, сюрприз удался. Спасибо. Рекомендую родителям взрослых детей.');
+            
+            
+            
+            
+            function listenerNextReviews(){
+                if (offsetReviews == (+widthReviews.slice(0, widthReviews.length - 2)/3  * (slidesReviews.length - 1))) { //650    px
+                    offsetReviews = 0;
+                } else {
+                    offsetReviews += (+widthReviews.slice(0, widthReviews.length - 2)/3); 
+                }
+            
+                shiftSlideReviews();
+            
                 if (slideIndexReviews == slidesReviews.length) {
                     slideIndexReviews = 1;
                 } else {
                     slideIndexReviews++;
                 }
-                
                 changeCurrent();
-        
-            });
+                
+            }
             
-            prevReviews.addEventListener('click', () => {
+            nextReviews.addEventListener('click', listenerNextReviews);
+            
+            function listenerPrevReviews(){
                 if (offsetReviews == 0) {
-                    offsetReviews = +widthReviews.slice(0, widthReviews.length - 2) * (slidesReviews.length - 1);
+                    offsetReviews = +widthReviews.slice(0, widthReviews.length - 2)/3 * (slidesReviews.length - 1);
                 } else {
-                    
-                    offsetReviews -= (+widthReviews.slice(0, widthReviews.length - 2));
+                    offsetReviews -= (+widthReviews.slice(0, widthReviews.length - 2)/3);
+                }
+            
+                shiftSlideReviews();
+            
+                if (slideIndexReviews == 1) {
+                    slideIndexReviews = slidesReviews.length;
+                } else {
+                    slideIndexReviews--;
+                }
+
+                changeCurrent();
+            }
+                
+            prevReviews.addEventListener('click', listenerPrevReviews);
+            
+            function nextReviews2(){
+                if(offsetReviews == (+widthReviews.slice(0, widthReviews.length - 2)/2 * (slidesReviews.length - 1))) { //650    px
+                    offsetReviews = 0;
+                }else {
+                    offsetReviews += (+widthReviews.slice(0, widthReviews.length - 2)/2); 
+                }
+            
+                shiftSlideReviews();
+            
+                if (slideIndexReviews == slidesReviews.length) {
+                    slideIndexReviews = 1;
+                } else {
+                    slideIndexReviews++;
+                }
+
+                changeCurrent();
+                
+            }
+
+            function prevReviews2(){
+                if (offsetReviews == 0) {
+                    offsetReviews = +widthReviews.slice(0, widthReviews.length - 2)/2 * (slidesReviews.length - 1);
+                } else {
+                    offsetReviews -= (+widthReviews.slice(0, widthReviews.length - 2)/2);
                 }
                 
-                slidesFiledReviews.style.transform = `translateX(-${offsetReviews}px)`;
+                shiftSlideReviews();
                 
                 if (slideIndexReviews == 1) {
                     slideIndexReviews = slidesReviews.length;
                 } else {
                     slideIndexReviews--;
                 }
-            
+                
                 changeCurrent();
-            });
+            }
+                
+            if(document.documentElement.clientWidth <= 1440){
+                
+                nextReviews.removeEventListener('click', listenerNextReviews);
+                prevReviews.removeEventListener('click', listenerPrevReviews);
+                
+                nextReviews.addEventListener('click', nextReviews2);
+                prevReviews.addEventListener('click', prevReviews2);
+                
+            }
+            if(document.documentElement.clientWidth <= 815){
+            
+                nextReviews.removeEventListener('click', nextReviews2);
+                prevReviews.removeEventListener('click', prevReviews2);
+            
+                nextReviews.addEventListener('click', () => { 
+                    if(offsetReviews == (+widthReviews.slice(0, widthReviews.length - 2) * (slidesReviews.length - 1))) { //650    px
+                        offsetReviews = 0;
+                    }else {
+                        console.log(widthReviews);
+                        offsetReviews += +widthReviews.slice(0, widthReviews.length - 2) ; 
+                    }
+                    
+                    shiftSlideReviews();
+                    
+                    if (slideIndexReviews == slidesReviews.length) {
+                        slideIndexReviews = 1;
+                    } else {
+                        slideIndexReviews++;
+                    }
+                    
+                    changeCurrent();
+            
+                });
+                
+                prevReviews.addEventListener('click', () => {
+                    if (offsetReviews == 0) {
+                        offsetReviews = +widthReviews.slice(0, widthReviews.length - 2) * (slidesReviews.length - 1);
+                    } else {
+                        
+                        offsetReviews -= (+widthReviews.slice(0, widthReviews.length - 2));
+                    }
+                    
+                    shiftSlideReviews();
+                    
+                    if (slideIndexReviews == 1) {
+                        slideIndexReviews = slidesReviews.length;
+                    } else {
+                        slideIndexReviews--;
+                    }
+                
+                    changeCurrent();
+                });
+            }
+        
         }
-    
-    }
     
     
     
